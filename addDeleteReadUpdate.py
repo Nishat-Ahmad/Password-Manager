@@ -34,19 +34,22 @@ def deleteEntryFullInfo(account : str, userName : str, password : str, note : st
         csvwriter = csv.writer(csvfile)
         csvwriter.writerows(listWithRows)   # Writes rows
 
-def updateAllAccountValue(oldAccount : str, newAccount : str) -> None:
-    '''
-    Updates all accounts values that are matching to the parameter.
-    '''
-    listWithRows = []
-    with open('data.csv', 'r') as csvfile:
-        for row in csv.reader(csvfile):
-            listWithRows.append(row)
+class Update:
+    def updateValue(account : str, userName : str, password : str, valueToUpdate : str, position : int) -> None:
+        '''
+        Use Case: to update username, password or note.
+        '''
+        listWithRows = []
+        with open('data.csv', 'r') as csvfile:
+            for row in csv.reader(csvfile):
+                listWithRows.append(row)
+            
+        # Finds the row which matches account, username and password.
+        for row in listWithRows:
+            if row[0] == account and row[1] == userName and row[2] == password:
+                row[position] = valueToUpdate
         
-    for row in listWithRows:
-        if row[0] == oldAccount:
-            row[0] = newAccount
-    
-    with open('data.csv', 'w', newline = "") as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerows(listWithRows)   # Writes rows
+        # Rewites the list into .csv file
+        with open('data.csv', 'w', newline = "") as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerows(listWithRows)   # Writes rows
