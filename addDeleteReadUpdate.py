@@ -67,7 +67,7 @@ class Read:
     
     def groupSpecialValues(value : str, position : int) -> None:
         '''
-        It reads rows that have similar account to account parameter and outputs them.
+        It reads rows that have similar values to value parameter and outputs them.
         '''
         index = 1
         with open('data.csv', 'r') as csvfile:
