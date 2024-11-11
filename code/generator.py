@@ -1,12 +1,16 @@
+'''
+All the functionality for generating random passwords.
+'''
+
 import random
 import string
 
 class Generator:
     password = []
     
-    def runner() -> str:
+    def runner() -> None:
         '''
-        Can create custom passwords.
+        Runs the whole password generator functionality.
         '''
         while True:
             print("Enter 0 to exit: ")
@@ -16,9 +20,8 @@ class Generator:
             if choice == 0:
                 break
             elif choice == 1:
-                remove = int(input("Enter 0 to clear buffer and 1 to keep adding to it: "))
-                
-                if remove == 1: Generator.password.clear()
+                remove = int(input("0 to clear buffer or 1 to keep extending size: "))
+                if remove == 0: Generator.password.clear()
                 
                 Generator.chracters()
                 Generator.specialChracters()

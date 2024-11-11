@@ -1,7 +1,69 @@
+'''
+Has add, read, delete, and update functions for data.csv
+'''
+
 import csv
 
 _path = '../data/data.csv'
 
+def runner() -> None:
+    while True:
+        print("Enter")
+        print("0 to exit")
+        print("1 to add a new entry.")
+        print("2 to red entry.")
+        print("3 to update entry.")
+        print("4 to delete entry.")
+        choice = int(input("Enter here: "))
+        
+        match choice:
+            case 0: break
+            case 1:
+                account = input("Enter account name: ")
+                userName = input("Enter user name: ")
+                password = input("Enter password: ")
+                note = input("Enter addition note [Enter 'no' if no note]: ")
+                if note == 'no':   Add.addEntry(account, userName, password)
+                else:               Add.addEntry(account, userName, password, note)
+            case 2:
+                print("Enter 1 to read full file: ")
+                print("Enter 2 for custom search: ")
+                choiceRead = int(input("Enter here: "))
+                if choiceRead == 1: Read.readFullFile()
+                elif choiceRead == 2:
+                    print("Enter 1 to search using account, 2 for user name, 3 for password, 4 for note: ")
+                    position = int(input("Enter choice here: "))
+                    key = input("Enter search term here: ")
+                    Read.groupSpecialValues(key, position)
+            case 3:
+                account = input("Enter account name: ")
+                userName = input("Enter user name: ")
+                password = input("Enter password: ")
+                position = int(input("Enter 1 to change user name, 2 for password: "))
+                
+                if position == 1: newVal = input("Enter new user name: ")
+                elif position == 2: newVal = input("Enter new password: ")
+                else: 
+                    print("Wrong value input.") 
+                    continue
+                Update.updateValue(account, userName, password, newVal, position)
+            case 4:
+                account = input("Enter account name: ")
+                userName = input("Enter user name: ")
+                password = input("Enter password: ")
+                
+                print("Enter 1 to delete 1 user: ")
+                print("Enter 2 to delete a bunch using key word: ")
+                choiceRead = int(input("Enter here: "))
+                if choiceRead == 1:     Delete.deleteEntryFullInfo(account, userName, password)
+                elif choiceRead == 2:
+                    print("Enter 1 to delete using account, 2 for user name, 3 for password: ")
+                    position = int(input("Enter choice here: "))
+                    key = input("Enter dlete item key here: ")
+                    Delete.deleteAllAccountUser(key, position)                
+            case _:
+                print("Wrong value.")
+                
 class Add:
     def addEntry(account : str, userName : str, password : str, note : str = "No note.") -> None:
         '''
@@ -27,28 +89,14 @@ class Delete:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerows(listWithRows)   # Writes rows
     
-    def deleteAllAccount(account : str) -> None:
+    def deleteAllAccountUser(key : str, position : int) -> None:
         '''
-        Deletes all the rows with account matching "account".
-        '''
-        listWithRows = []
-        with open(_path, 'r') as csvfile:
-            for row in csv.reader(csvfile):
-                if not (row[0] == account):
-                    listWithRows.append(row)
-        
-        with open(_path, 'w', newline = "") as csvfile:
-            csvwriter = csv.writer(csvfile)
-            csvwriter.writerows(listWithRows)   # Writes rows
-            
-    def deleteAllUsers(userName : str) -> None:
-        '''
-        Deletes all the rows with username matching "userName".
+        Deletes all the rows with matching position.
         '''
         listWithRows = []
         with open(_path, 'r') as csvfile:
             for row in csv.reader(csvfile):
-                if not (row[1] == userName):
+                if not (row[position] == key):
                     listWithRows.append(row)
         
         with open(_path, 'w', newline = "") as csvfile:

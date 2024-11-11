@@ -1,7 +1,34 @@
+'''
+Has functions to handle login, master password and username.
+'''
+
 class Login:
     __path = "../data/main.txt"
     
-    def login():
+    def runner() -> None:
+        while True:
+            print("-- Enter --")
+            print("0 to exit.")
+            print("1 to change login password.")
+            print("2 to change login user name.")
+            choice = (int(input("Enter choice here: ")))
+        
+            match choice:
+                case 0: break
+                case 1: 
+                    Login.Login()
+                    newPassword = input("Enter new password here: ")
+                    Login.changePassword(newPassword)
+                    print("Password changed successfully.")
+                case 1: 
+                    Login.Login()
+                    newUserName = input("Enter new user name here: ")
+                    Login.changeUserName(newUserName)
+                    print("User name changed successfully.")
+                case _:
+                    print("Wrong choice.")
+    
+    def Login() -> None:
         '''
         Runs the loginCheck 5 times.
         '''

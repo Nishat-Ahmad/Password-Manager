@@ -1,18 +1,21 @@
-# Not implemented yet.
-
 import Login
-import addDeleteReadUpdate as ADRU
+import functions
+import generator
 
-ADRU.Add.addEntry("Google", "nishat", 'abc')
-ADRU.Add.addEntry("Google", "asdfasf", 'abc')
-ADRU.Add.addEntry("Google", "xcmvnxc", 'abc')
-ADRU.Add.addEntry("Google", "asodfjasd", 'abc')
-ADRU.Add.addEntry("Facebook", "asodfjasd", 'abc')
-ADRU.Read.readFullFile()
-ADRU.Read.groupSpecialValues("Google", 0)
-# ADRU.Delete.deleteAllAccount("Google")
-# ADRU.Delete.deleteAllAccount("Facebook")
-
-# Login.Login.login()
-# Login.Login.changePassword("X@123")
-# Login.Login.login() 
+def main() -> None:
+    Login.Login.Login()
+    
+    while True:
+        print("Enter:")
+        print("0 to exit")
+        print("1 to go to Login")
+        print("2 to go to password generator")
+        print("3 to add, delete, read, or update stored passwords")
+        choice = int(input("Enter choice here: "))
+        
+        match choice:
+            case 0: break
+            case 1: Login.Login.runner()
+            case 2: generator.Generator.runner()
+            case 3: functions.runner()
+            case _: print("Wrong input")
