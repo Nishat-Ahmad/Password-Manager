@@ -2,6 +2,8 @@ import Login
 import functions
 import generator
 
+# UserName: abc, Password: 123456789
+
 def main() -> None:
     Login.Login.Login()
     
@@ -19,3 +21,5 @@ def main() -> None:
             case 2: generator.Generator.runner()
             case 3: functions.runner()
             case _: print("Wrong input")
+
+main()

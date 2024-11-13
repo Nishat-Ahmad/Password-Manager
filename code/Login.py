@@ -2,6 +2,16 @@
 Has functions to handle login, master password and username.
 '''
 
+import hashlib
+
+def hash_message(message: str) -> str:
+    hash_object = hashlib.sha256(message.encode())
+    return hash_object.hexdigest()  # coverts the binaries to hex value for human readable.
+
+def verify_message(original_hash: str, new_message: str) -> bool:
+    new_hash = hash_message(new_message)
+    return original_hash == new_hash
+
 class Login:
     __path = "../data/main.txt"
     
@@ -20,7 +30,7 @@ class Login:
                     newPassword = input("Enter new password here: ")
                     Login.changePassword(newPassword)
                     print("Password changed successfully.")
-                case 1: 
+                case 2:
                     Login.Login()
                     newUserName = input("Enter new user name here: ")
                     Login.changeUserName(newUserName)
@@ -50,7 +60,7 @@ class Login:
             data = file.readlines()
             for line in data:
                 word = line.split(',')
-                if word[0] == name and word[1] == password:
+                if verify_message(word[0], name) and verify_message(word[1], password):
                     print("Successfully logged in.")
                     return True
         
@@ -66,7 +76,7 @@ class Login:
                 word = line.split(',')
         
         with open(Login.__path, "w") as file:
-            appendThis = word[0] + "," + newPassword
+            appendThis = word[0] + "," + hash_message(newPassword)
             file.write(appendThis)
 
     def changeUserName(newName : str) -> None:
@@ -79,5 +89,5 @@ class Login:
                 word = line.split(',')
         
         with open(Login.__path, "w") as file:
-            appendThis =  newName + "," + word[1]
+            appendThis =  hash_message(newName) + "," + word[1]
             file.write(appendThis)

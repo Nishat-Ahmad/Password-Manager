@@ -35,7 +35,7 @@ class Generator:
                     choice = int(input("Enter 0 to exit: \nEnter 1 to add digits: \nEnter 2 to add letters: \nEnter 3 to add special chracters: \nEnter: "))
                     
                     remove = int(input("Enter 0 to clear buffer and 1 to keep adding to it: "))    
-                    if remove == 1: Generator.password.clear()
+                    if remove == 0: Generator.password.clear()
                     
                     if choice == 0:
                         break
