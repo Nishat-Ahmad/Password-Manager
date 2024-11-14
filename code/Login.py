@@ -4,13 +4,11 @@ Has functions to handle login, master password and username.
 
 import hashlib
 
-def hash_message(message: str) -> str:
-    hash_object = hashlib.sha256(message.encode())
-    return hash_object.hexdigest()  # coverts the binaries to hex value for human readable.
+def hashMessage(message: str) -> str:
+    return (hashlib.sha256(message.encode())).hexdigest() # coverts the binaries to hex value for human readable.
 
 def verify_message(original_hash: str, new_message: str) -> bool:
-    new_hash = hash_message(new_message)
-    return original_hash == new_hash
+    return (original_hash == hashMessage(new_message))
 
 class Login:
     __path = "../Password Manager/data/main.txt"
@@ -78,7 +76,7 @@ class Login:
                 word = line.split(',')
         
         with open(Login.__path, "w") as file:
-            appendThis = word[0] + "," + hash_message(newPassword)
+            appendThis = word[0] + "," + hashMessage(newPassword)
             file.write(appendThis)
 
     def changeUserName(newName : str) -> None:
@@ -91,5 +89,5 @@ class Login:
                 word = line.split(',')
         
         with open(Login.__path, "w") as file:
-            appendThis =  hash_message(newName) + "," + word[1]
+            appendThis =  hashMessage(newName) + "," + word[1]
             file.write(appendThis)

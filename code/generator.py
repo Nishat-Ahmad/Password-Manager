@@ -66,6 +66,7 @@ class Generator:
         '''
         # string.ascii_letters: all upper and lower case letters
         for i in range(random.randint(start, end)):
+            random.shuffle(Generator.password.append(random.choice(list(string.ascii_letters))))
         
     def specialChracters(start : int = 5, end : int = 10) -> None:
         '''
