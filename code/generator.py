@@ -64,10 +64,8 @@ class Generator:
         '''
         start and stop define range of chracters to be included.
         '''
+        # string.ascii_letters: all upper and lower case letters
         for i in range(random.randint(start, end)):
-            # string.ascii_letters: all upper and lower case letters
-            Generator.password.append(random.choice(list(string.ascii_letters)))
-            random.shuffle(Generator.password)
         
     def specialChracters(start : int = 5, end : int = 10) -> None:
         '''
@@ -75,8 +73,7 @@ class Generator:
         '''
         special_characters = list("!@#$%^&*()-_=+[]}{|;:'\",.<>?/~`")
         for i in range(random.randint(start, end)):
-            Generator.password.append(random.choice(special_characters))
-            random.shuffle(Generator.password)
+            random.shuffle(Generator.password.append(random.choice(special_characters)))
     
     def digits(start : int = 5, end : int = 10) -> None:
         '''
@@ -84,5 +81,4 @@ class Generator:
         '''
         digits = list("1234567890")
         for i in range(random.randint(start, end)):
-            Generator.password.append(random.choice(digits))
-            random.shuffle(Generator.password)
+            random.shuffle(Generator.password.append(random.choice(digits)))

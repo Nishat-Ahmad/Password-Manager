@@ -5,7 +5,9 @@ import generator
 # UserName: abc, Password: 123456789
 
 def main() -> None:
-    Login.Login.Login()
+    flag = Login.Login.Login()
+    if not flag:
+        return
     
     while True:
         print("Enter:")

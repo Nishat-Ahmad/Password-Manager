@@ -13,7 +13,7 @@ def verify_message(original_hash: str, new_message: str) -> bool:
     return original_hash == new_hash
 
 class Login:
-    __path = "../data/main.txt"
+    __path = "../Password Manager/data/main.txt"
     
     def runner() -> None:
         while True:
@@ -38,7 +38,7 @@ class Login:
                 case _:
                     print("Wrong choice.")
     
-    def Login() -> None:
+    def Login() -> bool:
         '''
         Runs the loginCheck 5 times.
         '''
@@ -51,6 +51,8 @@ class Login:
             tries += 1
             if loginSuccess == False:
                 print(f"Wrong name or password, tries left: {5 - tries}")
+        
+        return loginSuccess
 
     def loginCheck(name : str, password : str) -> bool:
         '''
