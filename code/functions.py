@@ -111,9 +111,15 @@ class Delete:
         listWithRows = []
         with open(_path, 'r') as csvfile:
             for row in csv.reader(csvfile):
-                if not (row[position] == key):
-                    listWithRows.append(row)
-        
+                if position == 0:
+                    if not (row[position] == key):
+                        listWithRows.append(row)
+                elif position == 1 or position == 2:
+                    if not (cipher.decrypt(row[position]).decode() == key):
+                        listWithRows.append(row)
+                else:
+                    print("Wrong input.")
+            
         with open(_path, 'w', newline = "") as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerows(listWithRows)
