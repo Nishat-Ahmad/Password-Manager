@@ -1,0 +1,23 @@
+2024-11-16 DEBUG [Login] 14:43:02.613990 Login attempted.
+2024-11-16 DEBUG [Login] 14:43:02.613990 Login attempted.
+2024-11-16 INFO [Login] 14:43:02.613990 Successfully logged in.
+2024-11-16 DEBUG [Login] 14:43:02.613990 Login attempted.
+2024-11-16 INFO [Login] 14:43:02.613990 Successfully logged in.
+2024-11-16 INFO [Login] 14:43:02.613990 Master password has been changed.
+2024-11-16 DEBUG [Login] 14:43:02.613990 Login attempted.
+2024-11-16 INFO [Login] 14:43:02.613990 Successfully logged in.
+2024-11-16 INFO [Login] 14:43:02.613990 Master user name has been changed.
+2024-11-16 INFO [Generator] 14:43:02.613990 Password generator was accessed.
+2024-11-16 INFO [Generator] 14:43:02.613990 Fully random password generator was used.
+2024-11-16 INFO [Generator] 14:43:02.613990 Custom random password generator was used.
+2024-11-16 INFO [Functions] 14:43:02.613990 New data was added.
+2024-11-16 INFO [Functions] 14:43:02.613990 All of data.csv was read.
+2024-11-16 INFO [Functions] 14:43:02.613990 Part of data.csv was read.
+2024-11-16 INFO [Functions] 14:43:02.613990 Part of data.csv was read.
+2024-11-16 WARNING [Functions] 14:43:02.613990 Part of data.csv was updated.
+2024-11-16 INFO [Functions] 14:43:02.613990 Part of data.csv was read.
+2024-11-16 WARNING [Functions] 14:43:02.613990 Data of one user was deleted.
+2024-11-16 WARNING [Functions] 14:43:02.613990 Data of a bunch of users was deleted.
+2024-11-16 DEBUG [Login] 14:43:02.613990 Login attempted.
+2024-11-16 INFO [Login] 14:43:02.613990 Successfully logged in.
+2024-11-16 INFO [Password Checker] 14:43:02.613990 Password checker was used.

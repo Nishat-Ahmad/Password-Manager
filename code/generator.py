@@ -4,6 +4,7 @@ All the functionality for generating random passwords.
 
 import random
 import string
+import log
 
 class Generator:
     password = []
@@ -12,16 +13,18 @@ class Generator:
         '''
         Runs the whole password generator functionality.
         '''
+        log.Functions.generator(1)
         while True:
             print("Enter 0 to exit: ")
             print("Enter 1 to generate fully random password: ")
             print("Enter 2 to customize it: ")
             choice = int(input("Enter: "))
             if choice == 0:
-                break
+                return
             elif choice == 1:
                 remove = int(input("0 to clear buffer or 1 to keep extending size: "))
                 if remove == 0: Generator.password.clear()
+                log.Functions.generator(2)
                 
                 Generator.chracters()
                 Generator.specialChracters()
@@ -31,9 +34,10 @@ class Generator:
                 print(f"Fully random password: {"".join(Generator.password)}")
                 print("------------------------------")
             elif choice == 2:
+                log.Functions.generator(3)
                 while True:
                     choice = int(input("Enter 0 to exit: \nEnter 1 to add digits: \nEnter 2 to add letters: \nEnter 3 to add special chracters: \nEnter: "))
-                    
+                    if choice == 0: break
                     remove = int(input("Enter 0 to clear buffer and 1 to keep adding to it: "))    
                     if remove == 0: Generator.password.clear()
                     
@@ -43,16 +47,19 @@ class Generator:
                         start = int(input("Enter what should be minimum number of digits in the password: "))
                         end = int(input("Enter what should be maximum number of digits in the password: "))
                         Generator.digits(start, end)
+                        random.shuffle(Generator.password)
                         print("".join(Generator.password))
                     elif choice == 2:
                         start = int(input("Enter what should be minimum number of letters in the password: "))
                         end = int(input("Enter what should be maximum number of letters in the password: "))
                         Generator.chracters(start, end)
+                        random.shuffle(Generator.password)
                         print("".join(Generator.password))
                     elif choice == 3:
                         start = int(input("Enter what should be minimum number of special chracters in the password: "))
                         end = int(input("Enter what should be maximum number of special chracters in the password: "))
                         Generator.specialChracters(start, end)
+                        random.shuffle(Generator.password)
                         print("".join(Generator.password))
                     else:
                         print("Wrong choice.")
@@ -66,7 +73,7 @@ class Generator:
         '''
         # string.ascii_letters: all upper and lower case letters
         for i in range(random.randint(start, end)):
-            random.shuffle(Generator.password.append(random.choice(list(string.ascii_letters))))
+            Generator.password.append(random.choice(list(string.ascii_letters)))
         
     def specialChracters(start : int = 5, end : int = 10) -> None:
         '''
@@ -74,7 +81,7 @@ class Generator:
         '''
         special_characters = list("!@#$%^&*()-_=+[]}{|;:'\",.<>?/~`")
         for i in range(random.randint(start, end)):
-            random.shuffle(Generator.password.append(random.choice(special_characters)))
+            Generator.password.append(random.choice(special_characters))
     
     def digits(start : int = 5, end : int = 10) -> None:
         '''
@@ -82,4 +89,4 @@ class Generator:
         '''
         digits = list("1234567890")
         for i in range(random.randint(start, end)):
-            random.shuffle(Generator.password.append(random.choice(digits)))
+            Generator.password.append(random.choice(digits))

@@ -3,6 +3,7 @@ Has add, read, delete, and update functions for data.csv
 '''
 
 import csv
+import log
 from cryptography.fernet import Fernet
 from cryptography.fernet import InvalidToken
 
@@ -29,16 +30,20 @@ def runner() -> None:
                 note = input("Enter addition note [Enter 'no' if no note]: ")
                 if note == 'no':   Add.addEntry(account, userName, password)
                 else:               Add.addEntry(account, userName, password, note)
+                log.Functions.functions(1)
             case 2:
                 print("Enter 1 to read full file: ")
                 print("Enter 2 for custom search: ")
                 choiceRead = int(input("Enter here: "))
-                if choiceRead == 1: Read.readFullFile()
+                if choiceRead == 1: 
+                    Read.readFullFile()
+                    log.Functions.functions(2)
                 elif choiceRead == 2:
                     print("Enter 1 to search using account, 2 for user name, 3 for password, 4 for note: ")
                     position = int(input("Enter choice here: "))
                     key = input("Enter search term here: ")
                     Read.groupSpecialValues(key, position)
+                    log.Functions.functions(3)
             case 3:
                 account = input("Enter account name: ")
                 userName = input("Enter user name: ")
@@ -51,6 +56,7 @@ def runner() -> None:
                     print("Wrong value input.") 
                     continue
                 Update.updateValue(account, userName, password, newVal, position)
+                log.Functions.functions(4)
             case 4:
                 print("Enter 1 to delete 1 user: ")
                 print("Enter 2 to delete a bunch using key word: ")
@@ -60,11 +66,13 @@ def runner() -> None:
                     userName = input("Enter user name to delete: ")
                     password = input("Enter password to delete: ")
                     Delete.deleteEntryFullInfo(account, userName, password)
+                    log.Functions.functions(5)
                 elif choiceRead == 2:
                     print("Enter 1 to delete using account, 2 for user name, 3 for password: ")
                     position = int(input("Enter choice here: "))
                     key = input("Enter the value to delete here: ")
                     Delete.deleteAllAccountUser(key, position - 1)
+                    log.Functions.functions(6)
             case _:
                 print("Wrong value.")
 

@@ -4,6 +4,7 @@ Checks how strong the passwords are that are stored inside the data.csv file.
 import csv
 import Login
 import string
+import log
 from cryptography.fernet import Fernet
 
 _path = '../Password Manager/data/data.csv'
@@ -19,6 +20,7 @@ def runner() -> None:
         return
 
     PassCheck.dataTransferList()
+    log.Functions.passwordChecker()
     PassCheck.output()
 
 # Loads the cipher so that it can be used for decoding.

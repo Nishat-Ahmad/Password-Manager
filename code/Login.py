@@ -1,13 +1,13 @@
 '''
 Has functions to handle login, master password and username.
 '''
-
+import log
 import hashlib
 
 def hashMessage(message: str) -> str:
     return (hashlib.sha256(message.encode())).hexdigest() # coverts the binaries to hex value for human readable.
 
-def verify_message(original_hash: str, new_message: str) -> bool:
+def checkDetails(original_hash: str, new_message: str) -> bool:
     return (original_hash == hashMessage(new_message))
 
 class Login:
@@ -27,11 +27,13 @@ class Login:
                     Login.Login()
                     newPassword = input("Enter new password here: ")
                     Login.changePassword(newPassword)
+                    log.Functions.login(4)
                     print("Password changed successfully.")
                 case 2:
                     Login.Login()
                     newUserName = input("Enter new user name here: ")
                     Login.changeUserName(newUserName)
+                    log.Functions.login(5)
                     print("User name changed successfully.")
                 case _:
                     print("Wrong choice.")
@@ -43,13 +45,16 @@ class Login:
         tries = 0
         loginSuccess = False
         while(tries < 5 and loginSuccess == False):
+            log.Functions.login(1)
             Name = input("Enter user name: ")
             password = input("Enter password: ")
             loginSuccess = Login.loginCheck(Name, password)
             tries += 1
             if loginSuccess == False:
                 print(f"Wrong name or password, tries left: {5 - tries}")
-        
+                
+        if loginSuccess == True:    log.Functions.login(2)
+        elif loginSuccess == False:    log.Functions.login(3)
         return loginSuccess
 
     def loginCheck(name : str, password : str) -> bool:
@@ -60,9 +65,9 @@ class Login:
             data = file.readlines()
             for line in data:
                 word = line.split(',')
-                if verify_message(word[0], name) and verify_message(word[1], password):
-                    print("Successfully logged in.")
+                if checkDetails(word[0], name) and checkDetails(word[1], password):
                     return True
+                
         
         return False
 

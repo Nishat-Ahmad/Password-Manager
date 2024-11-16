@@ -2,14 +2,18 @@ import Login
 import functions
 import generator
 import passChecker
+import log
 
-# UserName: abc, Password: 123456789
+# UserName: a, Password: 123
 
 def main() -> None:
+    log.Functions.createFile()
     loginSuccess = Login.Login.Login()
+    
     if not loginSuccess: 
         print("Login was not successful.")
         return
+    else: print("Login was successful.")
     
     while True:
         print("Enter:")
@@ -28,4 +32,5 @@ def main() -> None:
             case 4: passChecker.runner()
             case _: print("Wrong input")
 
-main()
+if __name__ == "__main__":
+    main()
