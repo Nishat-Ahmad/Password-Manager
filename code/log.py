@@ -24,30 +24,30 @@ class Functions():
             
     def passwordChecker() -> None:
         with open(_logFilePath, "a") as file:
-            file.write(f"{str(Functions.dateTime.date())} INFO [Password Checker] {str(Functions.dateTime.time())} Password checker was used.\n")
+            file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Password Checker] Password checker was used.\n")
             
     def login(trigger : int) -> None:
         with open(_logFilePath, "a") as file:
             match trigger:
-                case 1: file.write(f"{str(Functions.dateTime.date())} DEBUG [Login] {str(Functions.dateTime.time())} Login attempted.\n")
-                case 2: file.write(f"{str(Functions.dateTime.date())} INFO [Login] {str(Functions.dateTime.time())} Successfully logged in.\n")
-                case 3: file.write(f"{str(Functions.dateTime.date())} DEBUG [Login] {str(Functions.dateTime.time())} Failed to login.\n")
-                case 4: file.write(f"{str(Functions.dateTime.date())} INFO [Login] {str(Functions.dateTime.time())} Master password has been changed.\n")
-                case 5: file.write(f"{str(Functions.dateTime.date())} INFO [Login] {str(Functions.dateTime.time())} Master user name has been changed.\n")
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} DEBUG [Login] Login attempted.\n")
+                case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Login] Successfully logged in.\n")
+                case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} DEBUG [Login] Failed to login.\n")
+                case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Login]  Master password has been changed.\n")
+                case 5: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Login] Master user name has been changed.\n")
 
     def generator(trigger : int) -> None:
         with open(_logFilePath, "a") as file:
             match trigger:
-                case 1: file.write(f"{str(Functions.dateTime.date())} INFO [Generator] {str(Functions.dateTime.time())} Password generator was accessed.\n")
-                case 2: file.write(f"{str(Functions.dateTime.date())} INFO [Generator] {str(Functions.dateTime.time())} Fully random password generator was used.\n")
-                case 3: file.write(f"{str(Functions.dateTime.date())} INFO [Generator] {str(Functions.dateTime.time())} Custom random password generator was used.\n")
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Password generator was accessed.\n")
+                case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Fully random password generator was used.\n")
+                case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Custom random password generator was used.\n")
 
     def functions(trigger : int) -> None:
         with open(_logFilePath, "a") as file:
             match trigger:
-                case 1: file.write(f"{str(Functions.dateTime.date())} INFO [Functions] {str(Functions.dateTime.time())} New data was added.\n")
-                case 2: file.write(f"{str(Functions.dateTime.date())} INFO [Functions] {str(Functions.dateTime.time())} All of data.csv was read.\n")
-                case 3: file.write(f"{str(Functions.dateTime.date())} INFO [Functions] {str(Functions.dateTime.time())} Part of data.csv was read.\n")
-                case 4: file.write(f"{str(Functions.dateTime.date())} WARNING [Functions] {str(Functions.dateTime.time())} Part of data.csv was updated.\n")
-                case 5: file.write(f"{str(Functions.dateTime.date())} WARNING [Functions] {str(Functions.dateTime.time())} Data of one user was deleted.\n")
-                case 6: file.write(f"{str(Functions.dateTime.date())} WARNING [Functions] {str(Functions.dateTime.time())} Data of a bunch of users was deleted.\n")
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Functions] New data was added.\n")
+                case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Functions] All of data.csv was read.\n")
+                case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Functions] Part of data.csv was read.\n")
+                case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Part of data.csv was updated.\n")
+                case 5: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Data of one user was deleted.\n")
+                case 6: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Data of a bunch of users was deleted.\n")
