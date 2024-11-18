@@ -19,7 +19,13 @@ def runner() -> None:
         print("2 to read entry.")
         print("3 to update entry.")
         print("4 to delete entry.")
-        choice = int(input("Enter here: "))
+        
+        while True:
+            try:    choice = int(input("Enter here: "))
+            except ValueError:
+                print("Please enter an integer.")
+                log.Functions.functionsError(1)
+            else:   break
         
         match choice:
             case 0: break
@@ -34,13 +40,26 @@ def runner() -> None:
             case 2:
                 print("Enter 1 to read full file: ")
                 print("Enter 2 for custom search: ")
-                choiceRead = int(input("Enter here: "))
+                
+                while True:
+                    try:    choiceRead = int(input("Enter here: "))
+                    except ValueError:
+                        print("Please enter an integer.")
+                        log.Functions.functionsError(2)
+                    else:   break
+                
                 if choiceRead == 1: 
                     Read.readFullFile()
                     log.Functions.functions(2)
                 elif choiceRead == 2:
                     print("Enter 1 to search using account, 2 for user name, 3 for password, 4 for note: ")
-                    position = int(input("Enter choice here: "))
+                    while True:
+                        try:    position = int(input("Enter choice here: "))
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.functionsError(3)
+                        else:   break
+                        
                     key = input("Enter search term here: ")
                     Read.groupSpecialValues(key, position)
                     log.Functions.functions(3)
@@ -48,7 +67,13 @@ def runner() -> None:
                 account = input("Enter account name: ")
                 userName = input("Enter user name: ")
                 password = input("Enter password: ")
-                position = int(input("Enter 1 to change user name, 2 for password: "))
+                
+                while True:
+                    try:    position = int(input("Enter 1 to change user name, 2 for password: "))
+                    except ValueError:
+                        print("Please enter an integer.")
+                        log.Functions.functionsError(4)
+                    else:   break
                 
                 if position == 1: newVal = input("Enter new user name: ")
                 elif position == 2: newVal = input("Enter new password: ")
@@ -58,9 +83,15 @@ def runner() -> None:
                 Update.updateValue(account, userName, password, newVal, position)
                 log.Functions.functions(4)
             case 4:
-                print("Enter 1 to delete 1 user: ")
+                print("Enter 1 to delete only 1 accounts data: ")
                 print("Enter 2 to delete a bunch using key word: ")
-                choiceRead = int(input("Enter here: "))
+                while True:
+                    try:    choiceRead = int(input("Enter here: "))
+                    except ValueError:
+                        print("Please enter an integer.")
+                        log.Functions.functionsError(5)
+                    else:   break
+                
                 if choiceRead == 1:     
                     account = input("Enter account name to delete: ")
                     userName = input("Enter user name to delete: ")
@@ -69,7 +100,14 @@ def runner() -> None:
                     log.Functions.functions(5)
                 elif choiceRead == 2:
                     print("Enter 1 to delete using account, 2 for user name, 3 for password: ")
-                    position = int(input("Enter choice here: "))
+                    
+                    while True:
+                        try:    position = int(input("Enter choice here: "))
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.functionsError(6)
+                        else:   break
+                        
                     key = input("Enter the value to delete here: ")
                     Delete.deleteAllAccountUser(key, position - 1)
                     log.Functions.functions(6)
@@ -178,7 +216,9 @@ class Update:
                     encryptedValueToUpdate = cipher.encrypt(valueToUpdate.encode())
                     row[position] = encryptedValueToUpdate.decode()
                     
-            except InvalidToken:    pass # As invalid tokens are going to be generated.
+            except InvalidToken:    
+                log.Functions.functions(7)
+                
             
         # Rewites the list into .csv file
         with open(_path, 'w', newline="") as csvfile:

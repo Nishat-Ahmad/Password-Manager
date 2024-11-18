@@ -34,6 +34,17 @@ class Functions():
                 case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} DEBUG [Login] Failed to login.\n")
                 case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Login]  Master password has been changed.\n")
                 case 5: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Login] Master user name has been changed.\n")
+    
+    def loginError(trigger : int) -> None:
+        with open(_logFilePath, "a") as file:
+            match trigger:
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Login] Value error in 'choice' [line 24].\n")
+                
+    def mainError(trigger : int) -> None:
+        with open(_logFilePath, "a") as file:
+            match trigger:
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [MAIN] Value error in 'choice' [line 27].\n")
+    
 
     def generator(trigger : int) -> None:
         with open(_logFilePath, "a") as file:
@@ -41,6 +52,16 @@ class Functions():
                 case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Password generator was accessed.\n")
                 case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Fully random password generator was used.\n")
                 case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} INFO [Generator] Custom random password generator was used.\n")
+    
+    def generatorError(trigger : int) -> None:
+        with open(_logFilePath, "a") as file:
+            match trigger:
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'choice' [line 25].\n")
+                case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'choice' [line 46].\n")
+                case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'remove' [line 55].\n")
+                case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'remove' [line 32].\n")
+                case 'start': file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'start' [line 75].\n")
+                case 'end': file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Generator] Value error in 'end' [line 82].\n")
 
     def functions(trigger : int) -> None:
         with open(_logFilePath, "a") as file:
@@ -51,3 +72,14 @@ class Functions():
                 case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Part of data.csv was updated.\n")
                 case 5: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Data of one user was deleted.\n")
                 case 6: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} WARNING [Functions] Data of a bunch of users was deleted.\n")
+    
+    def functionsError(trigger : int) -> None:
+        with open(_logFilePath, "a") as file:
+            match trigger:
+                case 1: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'choice' [line 27].\n")
+                case 2: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'choiceRead' [line 45].\n")
+                case 3: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'position' [line 57].\n")
+                case 4: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'position' [line 72].\n")
+                case 5: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'position' [line 89].\n")
+                case 6: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Value error in 'position' [line 105].\n")
+                case 7: file.write(f"{str(Functions.dateTime.date())} - {str(Functions.dateTime.time())} ERROR [Functions] Invalid Token [line 220].\n")

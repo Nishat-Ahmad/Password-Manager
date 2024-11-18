@@ -19,7 +19,12 @@ class Login:
             print("0 to exit.")
             print("1 to change login password.")
             print("2 to change login user name.")
-            choice = (int(input("Enter choice here: ")))
+            while True:
+                try:    choice = (int(input("Enter choice here: ")))
+                except ValueError:
+                    print("Please enter an integer.")
+                    log.Functions.loginError(1)
+                else:   break
         
             match choice:
                 case 0: break

@@ -1,0 +1,9 @@
+2024-11-18 - 20:45:37.386728 DEBUG [Login] Login attempted.
+2024-11-18 - 20:45:37.386728 INFO [Login] Successfully logged in.
+2024-11-18 - 20:45:37.386728 DEBUG [Login] Login attempted.
+2024-11-18 - 20:45:37.386728 INFO [Login] Successfully logged in.
+2024-11-18 - 20:45:37.386728 INFO [Login]  Master password has been changed.
+2024-11-18 - 20:45:37.386728 DEBUG [Login] Login attempted.
+2024-11-18 - 20:45:37.386728 INFO [Login] Successfully logged in.
+2024-11-18 - 20:45:37.386728 INFO [Login] Master user name has been changed.
+2024-11-18 - 20:45:37.386728 ERROR [Login] Value error in 'choice' [line 24].

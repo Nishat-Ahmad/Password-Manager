@@ -1,0 +1,55 @@
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 INFO [Login] Successfully logged in.
+2024-11-18 - 20:48:33.604041 ERROR [MAIN] Value error in 'choice' [line 27].
+2024-11-18 - 20:48:33.604041 ERROR [MAIN] Value error in 'choice' [line 27].
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 INFO [Login] Successfully logged in.
+2024-11-18 - 20:48:33.604041 INFO [Login]  Master password has been changed.
+2024-11-18 - 20:48:33.604041 INFO [Generator] Password generator was accessed.
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'choice' [line 25].
+2024-11-18 - 20:48:33.604041 INFO [Generator] Password generator was accessed.
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'remove' [line 32].
+2024-11-18 - 20:48:33.604041 INFO [Generator] Fully random password generator was used.
+2024-11-18 - 20:48:33.604041 INFO [Generator] Custom random password generator was used.
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'choice' [line 46].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'remove' [line 55].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 63].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'choice' [line 46].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'remove' [line 55].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 79].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 79].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 79].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'remove' [line 55].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 95].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 95].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'remove' [line 55].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 95].
+2024-11-18 - 20:48:33.604041 ERROR [Generator] Value error in 'start' [line 95].
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 DEBUG [Login] Login attempted.
+2024-11-18 - 20:48:33.604041 INFO [Login] Successfully logged in.
+2024-11-18 - 20:48:33.604041 INFO [Password Checker] Password checker was used.
+2024-11-18 - 20:48:33.604041 ERROR [MAIN] Value error in 'choice' [line 27].
+2024-11-18 - 20:48:33.604041 ERROR [Functions] Value error in 'choice' [line 27].
+2024-11-18 - 20:48:33.604041 INFO [Functions] New data was added.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 INFO [Functions] Part of data.csv was read.
+2024-11-18 - 20:48:33.604041 INFO [Functions] Part of data.csv was read.
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Part of data.csv was updated.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Part of data.csv was updated.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 ERROR [Functions] Value error in 'choice' [line 27].
+2024-11-18 - 20:48:33.604041 ERROR [Functions] Value error in 'position' [line 89].
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Data of one user was deleted.
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-18 - 20:48:33.604041 INFO [Functions] All of data.csv was read.
+2024-11-18 - 20:48:33.604041 ERROR [Functions] Value error in 'position' [line 89].
+2024-11-18 - 20:48:33.604041 ERROR [Functions] Value error in 'position' [line 89].

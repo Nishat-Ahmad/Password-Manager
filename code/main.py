@@ -4,7 +4,7 @@ import generator
 import passChecker
 import log
 
-# UserName: a, Password: 123
+# UserName: ab, Password: 123
 
 def main() -> None:
     log.Functions.createFile()
@@ -22,7 +22,13 @@ def main() -> None:
         print("2 to go to password generator")
         print("3 to add, delete, read, or update stored passwords")
         print("4 to check strength of passwords that are stored")
-        choice = int(input("Enter choice here: "))
+        
+        while True:
+            try:    choice = int(input("Enter choice here: "))
+            except ValueError:
+                print("Please enter an integer.")
+                log.Functions.mainError(1)
+            else:   break
         
         match choice:
             case 0: break

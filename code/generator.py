@@ -18,11 +18,24 @@ class Generator:
             print("Enter 0 to exit: ")
             print("Enter 1 to generate fully random password: ")
             print("Enter 2 to customize it: ")
-            choice = int(input("Enter: "))
+            while True:
+                try:    choice = (int(input("Enter choice here: ")))
+                except ValueError:
+                    print("Please enter an integer.")
+                    log.Functions.generatorError(1)
+                else:   break
+                
             if choice == 0:
                 return
             elif choice == 1:
-                remove = int(input("0 to clear buffer or 1 to keep extending size: "))
+                while True:
+                    try:    remove = int(input("0 to clear buffer or 1 to keep extending size: "))
+                    except ValueError:
+                        print("Please enter an integer.")
+                        log.Functions.generatorError(4)
+                    else:   break
+                if remove == 0: Generator.password.clear()
+
                 if remove == 0: Generator.password.clear()
                 log.Functions.generator(2)
                 
@@ -36,28 +49,51 @@ class Generator:
             elif choice == 2:
                 log.Functions.generator(3)
                 while True:
-                    choice = int(input("Enter 0 to exit: \nEnter 1 to add digits: \nEnter 2 to add letters: \nEnter 3 to add special chracters: \nEnter: "))
+                    while True:
+                        try:    choice = int(input("Enter 0 to exit: \nEnter 1 to add digits: \nEnter 2 to add letters: \nEnter 3 to add special chracters: \nEnter: "))
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.generatorError(2)
+                        else:   break
+                        
                     if choice == 0: break
-                    remove = int(input("Enter 0 to clear buffer and 1 to keep adding to it: "))    
+                    
+                    while True:
+                        try:    remove = int(input("Enter 0 to clear buffer and 1 to keep adding to it: "))    
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.generatorError(3)
+                        else:   break
                     if remove == 0: Generator.password.clear()
                     
-                    if choice == 0:
-                        break
-                    elif choice == 1:
-                        start = int(input("Enter what should be minimum number of digits in the password: "))
-                        end = int(input("Enter what should be maximum number of digits in the password: "))
+                    replacement = ''
+                    if choice == 1: replacement = "digits"
+                    elif choice == 2: replacement = "letters"
+                    elif choice == 3: replacement = "special chracters"
+                    
+                    while True:
+                        try:    start = int(input(f"Enter what should be minimum number of {replacement} in the password: "))
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.generatorError('start')
+                        else:   break
+                    
+                    while True:
+                        try:    end = int(input(f"Enter what should be maximum number of {replacement} in the password: "))
+                        except ValueError:
+                            print("Please enter an integer.")
+                            log.Functions.generatorError('end')
+                        else:   break
+                
+                    if choice == 1:                    
                         Generator.digits(start, end)
                         random.shuffle(Generator.password)
                         print("".join(Generator.password))
-                    elif choice == 2:
-                        start = int(input("Enter what should be minimum number of letters in the password: "))
-                        end = int(input("Enter what should be maximum number of letters in the password: "))
+                    elif choice == 2:                        
                         Generator.chracters(start, end)
                         random.shuffle(Generator.password)
                         print("".join(Generator.password))
-                    elif choice == 3:
-                        start = int(input("Enter what should be minimum number of special chracters in the password: "))
-                        end = int(input("Enter what should be maximum number of special chracters in the password: "))
+                    elif choice == 3:                        
                         Generator.specialChracters(start, end)
                         random.shuffle(Generator.password)
                         print("".join(Generator.password))
@@ -65,7 +101,6 @@ class Generator:
                         print("Wrong choice.")
             else:
                 print("Wrong choice.")
-                
     
     def chracters(start : int = 5, end : int = 10) -> None:
         '''
