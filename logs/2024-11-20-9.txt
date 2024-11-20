@@ -1,0 +1,2 @@
+2024-11-20 - 11:06:12.873906 DEBUG [Login] Login attempted.
+2024-11-20 - 11:06:32.842045 INFO [Login] Successfully logged in.

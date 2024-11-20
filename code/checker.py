@@ -16,7 +16,7 @@ def runner() -> None:
     print("Re-Enter login credentials:")
     loginSuccess = Login.Login.Login()
     if not loginSuccess: 
-        print("Failed to login")
+        print("Failed to login.")
         return
 
     PassCheck.dataTransferList()

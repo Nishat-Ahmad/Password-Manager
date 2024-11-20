@@ -1,0 +1,3 @@
+2024-11-20 - 11:40:58.095046 DEBUG [Login] Login attempted.
+2024-11-20 - 11:41:00.004471 INFO [Login] Successfully logged in.
+2024-11-20 - 11:41:14.634456 INFO [Functions] All of data.csv was read.

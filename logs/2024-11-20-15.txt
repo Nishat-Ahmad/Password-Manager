@@ -1,0 +1,7 @@
+2024-11-20 - 11:37:23.297874 DEBUG [Login] Login attempted.
+2024-11-20 - 11:37:28.207241 DEBUG [Login] Login attempted.
+2024-11-20 - 11:37:30.347458 INFO [Login] Successfully logged in.
+2024-11-20 - 11:37:37.271419 INFO [Functions] Part of data.csv was read.
+2024-11-20 - 11:37:49.680978 INFO [Functions] Part of data.csv was read.
+2024-11-20 - 11:38:26.548946 INFO [Functions] Part of data.csv was read.
+2024-11-20 - 11:39:47.206191 ERROR [Functions] Value error in 'choice' [line 27].

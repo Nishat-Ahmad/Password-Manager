@@ -1,0 +1,33 @@
+2024-11-20 - 11:18:18.373771 DEBUG [Login] Login attempted.
+2024-11-20 - 11:18:20.077726 DEBUG [Login] Login attempted.
+2024-11-20 - 11:18:21.708903 DEBUG [Login] Login attempted.
+2024-11-20 - 11:18:28.498194 DEBUG [Login] Login attempted.
+2024-11-20 - 11:18:31.539063 INFO [Login] Successfully logged in.
+2024-11-20 - 11:18:33.652062 INFO [Generator] Password generator was accessed.
+2024-11-20 - 11:18:35.424640 INFO [Generator] Custom random password generator was used.
+2024-11-20 - 11:19:22.134471 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:29.735898 INFO [Login] Successfully logged in.
+2024-11-20 - 11:18:18.312152 INFO [Password Checker] Password checker was used.
+2024-11-20 - 11:19:38.235092 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:40.856674 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:41.635143 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:42.757986 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:43.368277 DEBUG [Login] Login attempted.
+2024-11-20 - 11:19:44.085299 DEBUG [Login] Failed to login.
+2024-11-20 - 11:21:41.193024 INFO [Functions] New data was added.
+2024-11-20 - 11:22:42.495801 INFO [Functions] New data was added.
+2024-11-20 - 11:23:36.472185 INFO [Functions] New data was added.
+2024-11-20 - 11:24:09.592008 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:25:57.241002 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:26:01.233534 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:26:29.541282 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:26:32.743791 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:26:51.266278 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:26:54.920896 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:27:24.778360 WARNING [Functions] Data of one user was deleted.
+2024-11-20 - 11:27:29.217952 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:27:49.969943 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-20 - 11:28:09.899009 WARNING [Functions] Data of one user was deleted.
+2024-11-20 - 11:28:51.900733 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-20 - 11:29:00.434969 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-20 - 11:29:22.616312 INFO [Functions] New data was added.

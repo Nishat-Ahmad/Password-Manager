@@ -1,0 +1,11 @@
+2024-11-20 - 11:33:51.192580 DEBUG [Login] Login attempted.
+2024-11-20 - 11:33:53.154566 DEBUG [Login] Login attempted.
+2024-11-20 - 11:33:55.226058 INFO [Login] Successfully logged in.
+2024-11-20 - 11:34:27.659868 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:34:42.634057 ERROR [Functions] Value error in 'position' [line 72].
+2024-11-20 - 11:34:44.681674 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:34:57.207472 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 11:35:03.122261 INFO [Functions] All of data.csv was read.
+2024-11-20 - 11:35:55.112824 ERROR [Functions] Value error in 'position' [line 57].
+2024-11-20 - 11:35:58.840776 INFO [Functions] Part of data.csv was read.
+2024-11-20 - 11:37:08.451656 INFO [Functions] Part of data.csv was read.

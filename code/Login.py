@@ -29,13 +29,23 @@ class Login:
             match choice:
                 case 0: break
                 case 1: 
-                    Login.Login()
+                    print("Enter master credentials:")
+                    loginSuccess = Login.Login()
+                    if not(loginSuccess): 
+                        print("Invalid master credentials were logged")
+                        print("Password change failed.")
+                        break
                     newPassword = input("Enter new password here: ")
                     Login.changePassword(newPassword)
                     log.Functions.login(4)
                     print("Password changed successfully.")
                 case 2:
-                    Login.Login()
+                    print("Enter master credentials:")
+                    loginSuccess = Login.Login()
+                    if not(loginSuccess): 
+                        print("Invalid master credentials were logged")
+                        print("User name change failed.")
+                        break
                     newUserName = input("Enter new user name here: ")
                     Login.changeUserName(newUserName)
                     log.Functions.login(5)

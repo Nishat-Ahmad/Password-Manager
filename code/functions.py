@@ -4,6 +4,7 @@ Has add, read, delete, and update functions for data.csv
 
 import csv
 import log
+import Login
 from cryptography.fernet import Fernet
 from cryptography.fernet import InvalidToken
 
@@ -38,6 +39,12 @@ def runner() -> None:
                 else:               Add.addEntry(account, userName, password, note)
                 log.Functions.functions(1)
             case 2:
+                print("Enter master credentials:")
+                loginSuccess = Login.Login.Login()
+                if not(loginSuccess): 
+                    print("Invalid master credentials were logged, failed to read file.")
+                    break
+                
                 print("Enter 1 to read full file: ")
                 print("Enter 2 for custom search: ")
                 
@@ -61,7 +68,7 @@ def runner() -> None:
                         else:   break
                         
                     key = input("Enter search term here: ")
-                    Read.groupSpecialValues(key, position)
+                    Read.groupSpecialValues(key, position - 1)
                     log.Functions.functions(3)
             case 3:
                 account = input("Enter account name: ")
@@ -69,7 +76,7 @@ def runner() -> None:
                 password = input("Enter password: ")
                 
                 while True:
-                    try:    position = int(input("Enter 1 to change user name, 2 for password: "))
+                    try:    position = int(input("Enter 1 to change user name, 2 for password, 3 for account name: "))
                     except ValueError:
                         print("Please enter an integer.")
                         log.Functions.functionsError(4)
@@ -77,6 +84,7 @@ def runner() -> None:
                 
                 if position == 1: newVal = input("Enter new user name: ")
                 elif position == 2: newVal = input("Enter new password: ")
+                elif position == 3: newVal = input("Enter new account name: ")
                 else: 
                     print("Wrong value input.") 
                     continue
@@ -212,9 +220,13 @@ class Update:
             
         for row in listWithRows:
             try:
-                if (row[0] == account and cipher.decrypt(row[1].encode()).decode() == userName and cipher.decrypt(row[2].encode()).decode() == password):
-                    encryptedValueToUpdate = cipher.encrypt(valueToUpdate.encode())
-                    row[position] = encryptedValueToUpdate.decode()
+                if position == 1 or position == 2:
+                    if (row[0] == account and cipher.decrypt(row[1].encode()).decode() == userName and cipher.decrypt(row[2].encode()).decode() == password):
+                        encryptedValueToUpdate = cipher.encrypt(valueToUpdate.encode())
+                        row[position] = encryptedValueToUpdate.decode()
+                elif position == 3:
+                    if (row[0] == account and cipher.decrypt(row[1].encode()).decode() == userName and cipher.decrypt(row[2].encode()).decode() == password):
+                        row[0] = valueToUpdate
                     
             except InvalidToken:    
                 log.Functions.functions(7)

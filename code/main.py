@@ -1,7 +1,7 @@
 import Login
 import functions
 import generator
-import passChecker
+import checker
 import log
 
 # UserName: a, Password: 12
@@ -35,7 +35,7 @@ def main() -> None:
             case 1: Login.Login.runner()
             case 2: generator.Generator.runner()
             case 3: functions.runner()
-            case 4: passChecker.runner()
+            case 4: checker.runner()
             case _: print("Wrong input")
 
 if __name__ == "__main__":
