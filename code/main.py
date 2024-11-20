@@ -4,7 +4,7 @@ import generator
 import checker
 import log
 
-# UserName: a, Password: 12
+# UserName: ab, Password: 12
 
 def main() -> None:
     log.Functions.createFile()
