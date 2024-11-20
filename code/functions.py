@@ -4,7 +4,7 @@ Has add, read, delete, and update functions for data.csv
 
 import csv
 import log
-import Login
+import login
 from cryptography.fernet import Fernet
 from cryptography.fernet import InvalidToken
 
@@ -13,13 +13,16 @@ _keyPath = '../Password Manager/data/key.txt'
 cipher = ""
 
 def runner() -> None:
+    load_cipher()
+    
     while True:
-        print("Enter")
+        print("----- Enter -----")
         print("0 to exit")
         print("1 to add a new entry.")
         print("2 to read entry.")
         print("3 to update entry.")
         print("4 to delete entry.")
+        print("-----------------")
         
         while True:
             try:    choice = int(input("Enter here: "))
@@ -31,23 +34,26 @@ def runner() -> None:
         match choice:
             case 0: break
             case 1:
+                print("----------")
                 account = input("Enter account name: ")
                 userName = input("Enter user name: ")
                 password = input("Enter password: ")
                 note = input("Enter addition note [Enter 'no' if no note]: ")
+                print("----------")
                 if note == 'no':   Add.addEntry(account, userName, password)
                 else:               Add.addEntry(account, userName, password, note)
                 log.Functions.functions(1)
             case 2:
+                print("----------")
                 print("Enter master credentials:")
-                loginSuccess = Login.Login.Login()
+                loginSuccess = login.Login.Login()
                 if not(loginSuccess): 
                     print("Invalid master credentials were logged, failed to read file.")
                     break
-                
+                print("----------")
                 print("Enter 1 to read full file: ")
                 print("Enter 2 for custom search: ")
-                
+                print("----------")
                 while True:
                     try:    choiceRead = int(input("Enter here: "))
                     except ValueError:
@@ -55,11 +61,15 @@ def runner() -> None:
                         log.Functions.functionsError(2)
                     else:   break
                 
-                if choiceRead == 1: 
+                if choiceRead == 1:
+                    print("---------------") 
                     Read.readFullFile()
+                    print("---------------") 
                     log.Functions.functions(2)
                 elif choiceRead == 2:
+                    print("---------------")
                     print("Enter 1 to search using account, 2 for user name, 3 for password, 4 for note: ")
+                    print("---------------") 
                     while True:
                         try:    position = int(input("Enter choice here: "))
                         except ValueError:
@@ -71,17 +81,22 @@ def runner() -> None:
                     Read.groupSpecialValues(key, position - 1)
                     log.Functions.functions(3)
             case 3:
+                print("---------------") 
                 account = input("Enter account name: ")
                 userName = input("Enter user name: ")
                 password = input("Enter password: ")
+                print("---------------")
                 
                 while True:
-                    try:    position = int(input("Enter 1 to change user name, 2 for password, 3 for account name: "))
+                    try:    
+                        print("---------------") 
+                        position = int(input("Enter 1 to change user name, 2 for password, 3 for account name: "))
+                        print("---------------") 
                     except ValueError:
                         print("Please enter an integer.")
                         log.Functions.functionsError(4)
                     else:   break
-                
+                print("---------------") 
                 if position == 1: newVal = input("Enter new user name: ")
                 elif position == 2: newVal = input("Enter new password: ")
                 elif position == 3: newVal = input("Enter new account name: ")
@@ -90,9 +105,12 @@ def runner() -> None:
                     continue
                 Update.updateValue(account, userName, password, newVal, position)
                 log.Functions.functions(4)
+                print("---------------") 
             case 4:
+                print("---------------") 
                 print("Enter 1 to delete only 1 accounts data: ")
                 print("Enter 2 to delete a bunch using key word: ")
+                print("---------------") 
                 while True:
                     try:    choiceRead = int(input("Enter here: "))
                     except ValueError:
@@ -101,21 +119,24 @@ def runner() -> None:
                     else:   break
                 
                 if choiceRead == 1:     
+                    print("---------------") 
                     account = input("Enter account name to delete: ")
                     userName = input("Enter user name to delete: ")
                     password = input("Enter password to delete: ")
+                    print("---------------") 
                     Delete.deleteEntryFullInfo(account, userName, password)
                     log.Functions.functions(5)
                 elif choiceRead == 2:
+                    print("---------------") 
                     print("Enter 1 to delete using account, 2 for user name, 3 for password: ")
-                    
+                    print("---------------") 
                     while True:
                         try:    position = int(input("Enter choice here: "))
                         except ValueError:
                             print("Please enter an integer.")
                             log.Functions.functionsError(6)
                         else:   break
-                        
+                    
                     key = input("Enter the value to delete here: ")
                     Delete.deleteAllAccountUser(key, position - 1)
                     log.Functions.functions(6)
@@ -127,7 +148,6 @@ def load_cipher():
     with open(_keyPath, 'r') as keyfile:
         key = keyfile.read().strip()        # Read and strip any extra whitespace
         cipher = Fernet(key)                # Initialize the Fernet cipher with the key
-load_cipher()
 
 class Add:
     def addEntry(account : str, userName : str, password : str, note : str = "No note.") -> None:
@@ -215,8 +235,7 @@ class Update:
         '''
         listWithRows = []
         with open(_path, 'r') as csvfile:
-            for row in csv.reader(csvfile):
-                listWithRows.append(row)
+            for row in csv.reader(csvfile): listWithRows.append(row)
             
         for row in listWithRows:
             try:
@@ -228,11 +247,8 @@ class Update:
                     if (row[0] == account and cipher.decrypt(row[1].encode()).decode() == userName and cipher.decrypt(row[2].encode()).decode() == password):
                         row[0] = valueToUpdate
                     
-            except InvalidToken:    
-                log.Functions.functions(7)
-                
+            except InvalidToken:    log.Functions.functions(7)
             
-        # Rewites the list into .csv file
         with open(_path, 'w', newline="") as csvfile:
             csvwriter = csv.writer(csvfile)
             csvwriter.writerows(listWithRows)

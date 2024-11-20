@@ -1,0 +1,36 @@
+2024-11-20 - 12:12:59.744774 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:01.053310 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:03.803532 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:09.865716 INFO [Login] Successfully logged in.
+2024-11-20 - 12:13:16.419164 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:27.035202 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:29.341590 DEBUG [Login] Login attempted.
+2024-11-20 - 12:13:30.948649 INFO [Login] Successfully logged in.
+2024-11-20 - 12:13:33.725824 INFO [Login]  Master password has been changed.
+2024-11-20 - 12:17:02.722776 DEBUG [Login] Login attempted.
+2024-11-20 - 12:17:10.212787 INFO [Login] Successfully logged in.
+2024-11-20 - 12:17:12.263722 INFO [Login] Master user name has been changed.
+2024-11-20 - 12:17:24.544981 DEBUG [Login] Login attempted.
+2024-11-20 - 12:17:27.759458 DEBUG [Login] Login attempted.
+2024-11-20 - 12:17:29.348354 DEBUG [Login] Login attempted.
+2024-11-20 - 12:17:30.285786 DEBUG [Login] Login attempted.
+2024-11-20 - 12:17:33.950749 INFO [Login] Successfully logged in.
+2024-11-20 - 12:12:59.464602 INFO [Password Checker] Password checker was used.
+2024-11-20 - 12:17:41.275058 INFO [Generator] Password generator was accessed.
+2024-11-20 - 12:17:45.833960 INFO [Generator] Password generator was accessed.
+2024-11-20 - 12:18:18.429445 INFO [Generator] Fully random password generator was used.
+2024-11-20 - 12:18:22.530194 INFO [Generator] Custom random password generator was used.
+2024-11-20 - 12:21:52.972929 INFO [Functions] New data was added.
+2024-11-20 - 12:22:07.465475 INFO [Functions] New data was added.
+2024-11-20 - 12:22:09.140921 DEBUG [Login] Login attempted.
+2024-11-20 - 12:22:32.253422 INFO [Login] Successfully logged in.
+2024-11-20 - 12:22:35.170649 INFO [Functions] All of data.csv was read.
+2024-11-20 - 12:26:09.772218 DEBUG [Login] Login attempted.
+2024-11-20 - 12:26:19.115449 INFO [Login] Successfully logged in.
+2024-11-20 - 12:26:44.135353 INFO [Functions] Part of data.csv was read.
+2024-11-20 - 12:28:07.526130 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 12:28:15.701902 ERROR [Functions] Value error in 'position' [line 72].
+2024-11-20 - 12:28:16.224249 ERROR [Functions] Value error in 'position' [line 72].
+2024-11-20 - 12:28:17.193260 ERROR [Functions] Value error in 'position' [line 72].
+2024-11-20 - 12:28:19.107239 WARNING [Functions] Part of data.csv was updated.
+2024-11-20 - 12:29:55.012641 WARNING [Functions] Data of one user was deleted.

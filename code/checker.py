@@ -2,7 +2,7 @@
 Checks how strong the passwords are that are stored inside the data.csv file.
 '''
 import csv
-import Login
+import login
 import string
 import log
 from cryptography.fernet import Fernet
@@ -13,12 +13,15 @@ cipher = ""
 
 def runner() -> None:
     '''Controls the execution of the password checker funtions.'''
+    print("-----------------")
     print("Re-Enter login credentials:")
-    loginSuccess = Login.Login.Login()
-    if not loginSuccess: 
+    loginSuccess = login.Login.Login()
+    if not(loginSuccess):
         print("Failed to login.")
+        print("-----------------")
         return
-
+    
+    print("-----------------")
     PassCheck.dataTransferList()
     log.Functions.passwordChecker()
     PassCheck.output()

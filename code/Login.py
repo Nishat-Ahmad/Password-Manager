@@ -15,41 +15,45 @@ class Login:
     
     def runner() -> None:
         while True:
-            print("-- Enter --")
+            print("----- Enter -----")
             print("0 to exit.")
             print("1 to change login password.")
             print("2 to change login user name.")
+            print("-----------------")
             while True:
                 try:    choice = (int(input("Enter choice here: ")))
                 except ValueError:
+                    print("-----------------")
                     print("Please enter an integer.")
+                    print("-----------------")
                     log.Functions.loginError(1)
                 else:   break
         
             match choice:
                 case 0: break
-                case 1: 
-                    print("Enter master credentials:")
+                case 1:
+                    print("-----------------\nEnter master credentials:\n-----------------")
                     loginSuccess = Login.Login()
                     if not(loginSuccess): 
-                        print("Invalid master credentials were logged")
-                        print("Password change failed.")
+                        print("-----------------\nInvalid master credentials were logged")
+                        print("Password change failed-----------------\n.")
+                        print("-----------------")
                         break
-                    newPassword = input("Enter new password here: ")
+                    newPassword = input("-----------------\nEnter new password here:")
                     Login.changePassword(newPassword)
                     log.Functions.login(4)
-                    print("Password changed successfully.")
+                    print("-----------------\nPassword changed successfully.\n-----------------")
                 case 2:
-                    print("Enter master credentials:")
+                    print("-----------------\nEnter master credentials:\n-----------------")
                     loginSuccess = Login.Login()
                     if not(loginSuccess): 
-                        print("Invalid master credentials were logged")
-                        print("User name change failed.")
+                        print("-----------------\nInvalid master credentials were logged.\n-----------------")
+                        print("-----------------\nUser name change failed.\n-----------------")
                         break
-                    newUserName = input("Enter new user name here: ")
+                    newUserName = input("-----------------\nEnter new user name here: ")
                     Login.changeUserName(newUserName)
                     log.Functions.login(5)
-                    print("User name changed successfully.")
+                    print("-----------------\nUser name changed successfully.\n-----------------")
                 case _:
                     print("Wrong choice.")
     

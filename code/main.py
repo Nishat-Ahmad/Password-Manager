@@ -1,4 +1,4 @@
-import Login
+import login
 import functions
 import generator
 import checker
@@ -8,7 +8,7 @@ import log
 
 def main() -> None:
     log.Functions.createFile()
-    loginSuccess = Login.Login.Login()
+    loginSuccess = login.Login.Login()
     
     if not loginSuccess: 
         print("Login was not successful.")
@@ -16,12 +16,13 @@ def main() -> None:
     else: print("Login was successful.")
     
     while True:
-        print("Enter:")
+        print("----- Enter -----")
         print("0 to exit")
-        print("1 to go to Login")
-        print("2 to go to password generator")
-        print("3 to add, delete, read, or update stored passwords")
-        print("4 to check strength of passwords that are stored")
+        print("1 to change master password or user name.")
+        print("2 to go to generate custom passwords.")
+        print("3 to add, delete, read, or update stored passwords.")
+        print("4 to check strength of stored passwords.")
+        print("-----------------")
         
         while True:
             try:    choice = int(input("Enter choice here: "))
@@ -32,11 +33,11 @@ def main() -> None:
         
         match choice:
             case 0: break
-            case 1: Login.Login.runner()
+            case 1: login.Login.runner()
             case 2: generator.Generator.runner()
             case 3: functions.runner()
             case 4: checker.runner()
-            case _: print("Wrong input")
+            case _: print("Wrong input.")
 
 if __name__ == "__main__":
     main()
