@@ -1,0 +1,91 @@
+2024-11-21 - 20:22:04.902445 DEBUG [Login] Login attempted.
+2024-11-21 - 20:22:06.356150 DEBUG [Login] Login attempted.
+2024-11-21 - 20:22:07.488011 INFO [Login] Successfully logged in.
+2024-11-21 - 20:22:09.289900 INFO [Generator] Password generator was accessed.
+2024-11-21 - 20:22:10.750873 INFO [Generator] Custom random password generator was used.
+2024-11-21 - 20:23:58.520409 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:00.184816 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:00.760042 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:01.285695 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:01.854156 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:02.832274 DEBUG [Login] Failed to login.
+2024-11-21 - 20:24:05.916071 ERROR [MAIN] Value error in 'choice' [line 27].
+2024-11-21 - 20:24:07.790094 ERROR [MAIN] Value error in 'choice' [line 27].
+2024-11-21 - 20:24:10.462846 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:13.307932 INFO [Login] Successfully logged in.
+2024-11-21 - 20:22:04.743117 INFO [Password Checker] Password checker was used.
+2024-11-21 - 20:24:53.650238 INFO [Functions] New data was added.
+2024-11-21 - 20:24:55.857160 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:57.799954 DEBUG [Login] Login attempted.
+2024-11-21 - 20:24:59.061499 INFO [Login] Successfully logged in.
+2024-11-21 - 20:22:04.743117 INFO [Password Checker] Password checker was used.
+2024-11-21 - 20:25:36.016435 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:39.145435 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:39.673057 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:40.120281 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:40.536830 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:41.243721 DEBUG [Login] Failed to login.
+2024-11-21 - 20:25:50.742854 DEBUG [Login] Login attempted.
+2024-11-21 - 20:25:51.946779 INFO [Login] Successfully logged in.
+2024-11-21 - 20:25:54.126192 INFO [Functions] All of data.csv was read.
+2024-11-21 - 20:26:02.359993 DEBUG [Login] Login attempted.
+2024-11-21 - 20:26:04.023630 INFO [Login] Successfully logged in.
+2024-11-21 - 20:26:09.430590 DEBUG [Login] Login attempted.
+2024-11-21 - 20:26:11.470347 INFO [Login] Successfully logged in.
+2024-11-21 - 20:26:16.941255 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:26:44.164962 DEBUG [Login] Login attempted.
+2024-11-21 - 20:27:10.840443 INFO [Login] Successfully logged in.
+2024-11-21 - 20:27:14.706559 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:27:20.848848 DEBUG [Login] Login attempted.
+2024-11-21 - 20:27:22.161938 INFO [Login] Successfully logged in.
+2024-11-21 - 20:27:43.466457 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:27:47.780331 DEBUG [Login] Login attempted.
+2024-11-21 - 20:27:48.990303 INFO [Login] Successfully logged in.
+2024-11-21 - 20:27:54.033286 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:28:03.363667 DEBUG [Login] Login attempted.
+2024-11-21 - 20:28:04.827867 INFO [Login] Successfully logged in.
+2024-11-21 - 20:28:34.501200 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:28:40.325530 DEBUG [Login] Login attempted.
+2024-11-21 - 20:28:43.118167 INFO [Login] Successfully logged in.
+2024-11-21 - 20:28:47.161182 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:28:51.374989 DEBUG [Login] Login attempted.
+2024-11-21 - 20:28:53.117467 DEBUG [Login] Login attempted.
+2024-11-21 - 20:28:54.721896 INFO [Login] Successfully logged in.
+2024-11-21 - 20:29:06.834548 INFO [Functions] All of data.csv was read.
+2024-11-21 - 20:29:09.469202 DEBUG [Login] Login attempted.
+2024-11-21 - 20:29:11.358355 INFO [Login] Successfully logged in.
+2024-11-21 - 20:29:19.366756 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:29:23.909547 DEBUG [Login] Login attempted.
+2024-11-21 - 20:29:32.107564 INFO [Login] Successfully logged in.
+2024-11-21 - 20:29:36.481346 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:29:45.865822 DEBUG [Login] Login attempted.
+2024-11-21 - 20:29:49.362230 INFO [Login] Successfully logged in.
+2024-11-21 - 20:29:54.802315 ERROR [Functions] Value error in 'position' [line 57].
+2024-11-21 - 20:30:02.082652 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:30:32.174510 WARNING [Functions] Part of data.csv was updated.
+2024-11-21 - 20:30:36.337891 DEBUG [Login] Login attempted.
+2024-11-21 - 20:30:37.815055 INFO [Login] Successfully logged in.
+2024-11-21 - 20:30:43.464837 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:30:55.583930 ERROR [Functions] Value error in 'position' [line 72].
+2024-11-21 - 20:30:58.337169 WARNING [Functions] Part of data.csv was updated.
+2024-11-21 - 20:31:16.442056 WARNING [Functions] Part of data.csv was updated.
+2024-11-21 - 20:31:18.420363 DEBUG [Login] Login attempted.
+2024-11-21 - 20:31:20.259776 INFO [Login] Successfully logged in.
+2024-11-21 - 20:31:29.485106 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:31:44.592023 WARNING [Functions] Part of data.csv was updated.
+2024-11-21 - 20:31:45.804562 DEBUG [Login] Login attempted.
+2024-11-21 - 20:31:47.814775 INFO [Login] Successfully logged in.
+2024-11-21 - 20:32:06.714667 INFO [Functions] Part of data.csv was read.
+2024-11-21 - 20:32:21.359047 WARNING [Functions] Data of one user was deleted.
+2024-11-21 - 20:32:22.698601 DEBUG [Login] Login attempted.
+2024-11-21 - 20:32:23.807355 INFO [Login] Successfully logged in.
+2024-11-21 - 20:32:24.476788 INFO [Functions] All of data.csv was read.
+2024-11-21 - 20:32:41.428782 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-21 - 20:33:04.450830 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-21 - 20:33:05.780679 DEBUG [Login] Login attempted.
+2024-11-21 - 20:33:07.325923 INFO [Login] Successfully logged in.
+2024-11-21 - 20:33:07.952931 INFO [Functions] All of data.csv was read.
+2024-11-21 - 20:33:16.824967 WARNING [Functions] Data of a bunch of users was deleted.
+2024-11-21 - 20:33:18.924158 DEBUG [Login] Login attempted.
+2024-11-21 - 20:33:21.222460 INFO [Login] Successfully logged in.
+2024-11-21 - 20:33:22.127606 INFO [Functions] All of data.csv was read.

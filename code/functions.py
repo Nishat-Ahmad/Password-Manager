@@ -216,7 +216,9 @@ class Read:
                     if value == cipher.decrypt(row[position]).decode():
                         print(f"{index}. {row[0]}, {cipher.decrypt(row[1]).decode()}, {cipher.decrypt(row[2]).decode()}, {row[3]}")
                         index += 1
-                else:   print("Wrong position entered. [149, functions.py]")
+                else:   
+                    print("Wrong position entered.")
+                    break
 
 class Update:
     def updateValue(account : str, userName : str, password : str, valueToUpdate : str, position : int) -> None:

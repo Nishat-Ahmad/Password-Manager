@@ -4,11 +4,12 @@ import generator
 import checker
 import log
 
-# UserName: ab, Password: 12
+# UserName: a, Password: 123
 
 def main() -> None:
     '''Controls the execution of the whole code.'''
     log.Functions.createFile()
+    print("----------")
     loginSuccess = login.Login.Login()
     
     if not loginSuccess: 
