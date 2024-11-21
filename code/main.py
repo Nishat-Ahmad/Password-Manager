@@ -7,6 +7,7 @@ import log
 # UserName: ab, Password: 12
 
 def main() -> None:
+    '''Controls the execution of the whole code.'''
     log.Functions.createFile()
     loginSuccess = login.Login.Login()
     

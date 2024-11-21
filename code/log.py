@@ -13,20 +13,24 @@ class Functions():
     dateTimeVar = datetime.now()
     
     def countFiles(folder_path : str) ->int:
+        '''Counts how many files exist in logs folder.'''
         path = Path(folder_path)  
         return sum(1 for item in path.iterdir() if item.is_file())
     
     def createFile() -> None:
+        '''Creates a new text file.'''
         global _logFilePath
         numOfFiles = Functions.countFiles(Functions._path)
         with open(f"{Functions._path}/{str(Functions.dateTimeVar.date())}-{str((numOfFiles))}.txt", "a") as file:
-            _logFilePath = f"{Functions._path}/{str(Functions.dateTimeVar.date())}-{str(numOfFiles)}.txt"
+            _logFilePath = f"{Functions._path}/{str(Functions.dateTimeVar.date())}-{str(numOfFiles)}.txt"   # Can do this out of with indentation.
             
     def passwordChecker() -> None:
+        '''Logs is the password checker functionality is used.'''
         with open(_logFilePath, "a") as file:
             file.write(f"{str(Functions.dateTimeVar.date())} - {str(Functions.dateTimeVar.time())} INFO [Password Checker] Password checker was used.\n")
             
     def login(trigger : int) -> None:
+        '''Logs all the functionality of login file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
@@ -37,12 +41,14 @@ class Functions():
                 case 5: file.write(f"{str(Functions.dateTimeVar.date())} - {str(timeNow.time())} INFO [Login] Master user name has been changed.\n")
     
     def loginError(trigger : int) -> None:
+        '''Logs if there was an error generated in login file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
                 case 1: file.write(f"{str(Functions.dateTimeVar.date())} - {str(timeNow.time())} ERROR [Login] Value error in 'choice' [line 24].\n")
                 
     def mainError(trigger : int) -> None:
+        '''Logs if an error was generated in main file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
@@ -50,6 +56,7 @@ class Functions():
     
 
     def generator(trigger : int) -> None:
+        '''Logs which functions were used in generator.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
@@ -58,6 +65,7 @@ class Functions():
                 case 3: file.write(f"{str(Functions.dateTimeVar.date())} - {str(timeNow.time())} INFO [Generator] Custom random password generator was used.\n")
     
     def generatorError(trigger : int) -> None:
+        '''Logs error related to generator file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
@@ -69,6 +77,7 @@ class Functions():
                 case 'end': file.write(f"{str(Functions.dateTimeVar.date())} - {str(timeNow.time())} ERROR [Generator] Value error in 'end' [line 82].\n")
 
     def functions(trigger : int) -> None:
+        '''Logs which functions were used in functions file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
@@ -80,6 +89,7 @@ class Functions():
                 case 6: file.write(f"{str(Functions.dateTimeVar.date())} - {str(timeNow.time())} WARNING [Functions] Data of a bunch of users was deleted.\n")
     
     def functionsError(trigger : int) -> None:
+        '''Logs all the error generated in functions file.'''
         timeNow = datetime.now()
         with open(_logFilePath, "a") as file:
             match trigger:
